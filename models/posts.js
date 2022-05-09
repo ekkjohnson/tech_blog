@@ -16,16 +16,15 @@ Post.init (
         title: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                len: [1, 50],
-            },
         },
         contents: {
             type: DataTypes.TEXT,
             allowNull: false,
-            validate: {
-                len: [1, 250]
-            }
+        },
+        created: {
+            type: DataTypes.DATEONLY,
+            defaultValue: new Date(),
+            allowNull: false
         },
         user_id: {
             type: DataTypes.INTEGER,
