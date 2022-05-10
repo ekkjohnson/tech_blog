@@ -1,10 +1,10 @@
 const router = require('express').Router()
 const { Post, User, Comment } = require('../../models')
+const withAuth = require("../../utils/auth");
 
-
-router.get('/', async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
     if(!req.session) {
-       console.log('you must log in.');
+       console.log('you need to log in first');
     }
     const postData = await Post.findAll({
         where: {
@@ -32,6 +32,21 @@ router.get('/', async (req, res) => {
         res.json(err)
     }
 })
-
+router.get("/add", withAuth, async (req, res) => {
+    res.render("addpost");
+  });
+  
+  router.post("/add", withAuth, async (req, res) => {
+    try {
+      const newPost = await Post.create({
+        title: req.body.title,
+        content: req.body.content,
+        user_id: req.session.user_id,
+      });
+      res.json(newPost);
+    } catch (err) {
+      res.json(err);
+    }
+  });
 
 module.exports = router
