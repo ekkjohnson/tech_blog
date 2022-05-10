@@ -1,0 +1,21 @@
+<div class="single-post-main">
+{{#each posts as |post|}}
+<div class="post-card card"  data-post="{{id}}">
+    <h2 id="post-title" data-post="{{id}}">{{title}}</h2>
+    <h4>{{content}}</h4>
+    <p data-post="{{id}}">By: {{user.username}} Date created: {{created}}</p>
+</div>
+{{/each}}
+{{#each comments }}
+<div class="comment-card">
+    <h5>{{comment}}</h5><p data-post="{{id}}">Created By: {{user.username}}    Date created: {{created}}</p>
+</div>
+{{/each}}
+  <form id="new-form" class="new-comment-form">
+  <div class="form-group">
+    <textarea class="form-control" id="comment-content-input" rows="3" placeholder="Enter new comment here."></textarea>
+  </div>
+  <button class="btn btn-dark" type="submit">Add Comment</button>
+</form>  
+</div>
+<script src="/js/newComment.js"></script>
