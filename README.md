@@ -17,7 +17,9 @@
 
  # Description
   tech blog to post on for users
-  
+  AS A developer who writes about tech
+I WANT a CMS-style blog site
+SO THAT I can publish articles, blog posts, and my thoughts and opinions
   # License
   ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)<br>
   [The MIT license](https://opensource.org/licenses/MIT)
