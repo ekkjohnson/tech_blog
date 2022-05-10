@@ -1,5 +1,5 @@
 [{
     "title": "first post",
-    "content": "my first post",
-    "user_id": 2
+    "contents": "my first post",
+    "user_id": 1
 }]

@@ -2,13 +2,15 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const expressHB = require('express-handlebars');
-const routes = require('./controllers');
+const app = express();
+
+const PORT = process.env.PORT || 3001;
+
+const routes = require('./controllers/');
 const helpers = require('./utils/auth');
 const sequelize = require('./config/connection');
+
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const app = express();
-const PORT = process.env.PORT || 3001;
-const HB=expressHB.create({helpers});
 
 const Sess={
     secret: 'secret secret',
@@ -20,9 +22,11 @@ const Sess={
     })
 };
 
+const HB = expressHB.create({helpers});
+
 app.use(session(Sess));
 
-app.engine('handlebars', hbs.engine);
+app.engine('handlebars', HB.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.json());

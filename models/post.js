@@ -8,7 +8,6 @@ Post.init (
 
         id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
             autoIncrement: true,
             primaryKey: true
         },
@@ -18,7 +17,7 @@ Post.init (
             allowNull: false,
         },
         contents: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         created: {

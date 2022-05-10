@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection')
-const { User, Post, Comment } = require('../models')
+const { User, Post, Comments } = require('../models')
 
 const commentData=require('./comment.json')
 const userData= require('./user.json')
@@ -13,7 +13,7 @@ await User.bulkCreate(userData , {
     returning: true,
 })
 await Post.bulkCreate(postData)
-await Comment.bulkCreate(commentData)
+await Comments.bulkCreate(commentData)
 } catch (err) {
 console.log(err);
 }
