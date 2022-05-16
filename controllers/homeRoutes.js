@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Post, Comments } = require("../models");
+const { User, Post, Comment} = require("../models");
 
 router.get("/", async (req, res) => {
   const postData = await Post.findAll({
@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
         attributes: ["id", "username"],
       },
       {
-        model: Comments,
+        model: Comment,
         attributes: ["comment", "user_id", "created"],
       },
     ],
