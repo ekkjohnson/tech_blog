@@ -1,11 +1,22 @@
 <div class="single-post-main">
+  <div>
+  <button class="btn-dark btn " id="delete-button">Delete Post</button>
+  <button class="btn-dark btn hide" id="update-button">Update Post</button>
+  </div>
+
 {{#each posts as |post|}}
-<div class="post-card card"  data-post="{{id}}">
+<div class="post-card card" id="single-post" data-user="{{user_id}}" data-post="{{id}}">
     <h2 id="post-title" data-post="{{id}}">{{title}}</h2>
-    <h4>{{content}}</h4>
+    <h4 data-post="{{id}}">{{content}}</h4>
     <p data-post="{{id}}">By: {{user.username}} Date created: {{created}}</p>
 </div>
 {{/each}}
+<form id="new-form" class="update-post-form d-none">
+  <div class="form-group">
+    <textarea class="form-control" id="update-post-input" rows="3" placeholder="Enter updated post content here."></textarea>
+  </div>
+  <button class="btn btn-dark" type="submit">Save Update</button>
+</form> 
 {{#each comments }}
 <div class="comment-card">
     <h5>{{comment}}</h5><p data-post="{{id}}">Created By: {{user.username}}    Date created: {{created}}</p>
@@ -18,4 +29,6 @@
   <button class="btn btn-dark" type="submit">Add Comment</button>
 </form>  
 </div>
+
 <script src="/js/newComment.js"></script>
+<script src="/js/updatePost.js"></script>

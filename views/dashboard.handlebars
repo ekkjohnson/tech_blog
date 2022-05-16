@@ -1,8 +1,9 @@
-<button class="add-post btn btn-dark">Add New Post</button>
-
-{{#each posts as |post|}}
-<div class="post-card card" data-post="{{id}}">
-    <h1 data-post="{{id}}">Blog Title: {{title}} --- Post id: {{id}}</h1>
-    <p data-post="{{id}}">Content: {{content}}    Date created: {{created}}</p>
+<div class="dashboard-main">
+  {{#each posts as |post|}}
+    <div class="post-card card" data-post="{{id}}">
+      <h2 id="post-title" data-post="{{id}}">{{title}}</h2>
+      <p data-post="{{id}}">Date created: {{created}}</p>
+    </div>
+  {{/each}}
+  <button class="add-post btn btn-dark"><a href="/api/dashboard/add" class="add-post">Add New Post</a></button>
 </div>
-{{/each}}
