@@ -1,4 +1,4 @@
-const addNewPost = async () => {
+const addNewPost = async (event) => {
     event.preventDefault();
     const title = document.querySelector("#post-title-input").value.trim();
     const content = document.querySelector("#post-content-input").value.trim();

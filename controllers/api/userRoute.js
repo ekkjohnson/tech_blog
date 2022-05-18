@@ -1,14 +1,14 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-router.get("/login", async (req, res) => {
-  console.log(req.session);
-  try {
-    res.render("login");
-  } catch (err) {
-    res.json(err);
-  }
-});
+// router.get("/login", async (req, res) => {
+//   console.log(req.session);
+//   try {
+//     res.render("login");
+//   } catch (err) {
+//     res.json(err);
+//   }
+// });
 
 router.post("/login", async (req, res) => {
   try {
@@ -41,6 +41,7 @@ router.post("/login", async (req, res) => {
         console.log(error)
       }
     });
+
 router.get("/register", async (req, res) => {
   try {
     res.render("register");
