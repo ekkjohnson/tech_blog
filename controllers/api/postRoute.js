@@ -22,17 +22,7 @@ router.get("/:id", withAuth, async (req, res) => {
         },
       ],
     });
-    const commentData = await Comment.findAll({
-      where: {
-        post_id: req.params.id,
-      },
-      include: [
-        {
-          model: User,
-          attributes: ["username"],
-        },
-      ],
-    });
+    
   
     const posts = postData.map((post) => post.get({ plain: true }));
     console.log(posts);
