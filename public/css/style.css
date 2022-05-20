@@ -1,104 +1,67 @@
-:root {
-  --blue: #3f88c5;
-  --dark-blue: #032b43;
-  --green: #136f63;
-  --space: #2b2d42;
-  --light-space: #8d99ae;
-  --lightest: #edf2f4;
+.line {
+  height: 1px;
+  background: black;
 }
-* {
-  color: var(--blue);
+
+.add-post {
+  float: right;
+  position: relative;
+  bottom: 37px;
 }
-body {
-    min-height: 100%;
-    background-color: var(--space);
-  }
-  header {
-    background-color: var(--light-space);
-  }
-  header h1 {
-    color: white;
-    margin-left: 10vw;
-  }
-  
-  
-  .user-form-card {
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-  }
-  .user-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .user-form input {
-    width: 25vw;
-  }
-  .login-button {
-    width: 25vw;
-  }
-  .post-card {
-    background-color: var(--light-space);
-    width: 70vw;
-    margin: 3px;
-  }
-  .comment-card {
-    width: 70vw;
-    background-color: var(--light-space);
-    margin: 3px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .comment-card * {
-    color: var(--space);
-    
-  }
-  .post-card * {
-    color: var(--space);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  #post-title {
-    color: white
-  }
-  .single-post-main {
-    width: 100vw;
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .home-main {
-    width: 100vw;
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .dashboard-main {
-      width: 100vw;
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-  }
-  
-  .add-main {
-    width: 100vw;
-    min-height: 90vh;
-    display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-  }
-  
-  #new-form {
-    width: 70vw;
-  
-  }
+.post-name {
+  font-size: 30px;
+}
+
+.post-text {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.comment-text {
+  font-size: 15px;
+}
+
+.comment-section {
+  font-size: larger;
+}
+.main-text{
+  font-weight: bolder;
+}
+
+.post-title {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.post-card {
+  margin: 20px
+}
+
+.post-button {
+margin-top: 10px;
+}
+.back-button {
+  float: left;
+  position: relative;
+  right: 150px;
+}
+
+.line {
+  height: 1px;
+  background: black;
+}
+
+.add-comment {
+  float: right;
+  position: relative;
+  bottom: 37px;
+}
+.post-name {
+  font-size: 30px;
+}
+
+.post-text {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
