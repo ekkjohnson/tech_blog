@@ -1,18 +1,26 @@
-const addNewPost = async (event) => {
-    event.preventDefault();
-    const title = document.querySelector("#post-title-input").value.trim();
-    const content = document.querySelector("#post-content-input").value.trim();
-    if (title == "" || content == "") {
-      return alert("You must enter a title and content for your new post!");
-    } else {
-      const newPost = await fetch("/api/dashboard/add", {
-        method: "POST",
-        body: JSON.stringify({ title, content }),
-        headers: { "Content-Type": "application/json" },
+try {
+  const postHandler = async (event) => {
+      event.preventDefault();    
+      const contents = $('#post-body').val().trim();
+      if(contents) {
+      const id = event.target.getAttribute('data-id');
+      const response = await fetch(`/${id}`, {
+          method: 'POST',
+          body: JSON.stringify({ contents }),
+          headers: { 'Content-Type': 'application/json '},
       });
-  
-      return document.location.replace("/api/dashboard");
-    }
-  };
-  
-  document.querySelector(".new-post-form").addEventListener("submit", addNewPost);
+      await response.json();
+
+      if (response.ok) {
+          alert("Post Added")
+          document.location.replace(`/${id}`);     
+      } else {
+          alert('You Are Not Signed In');
+          document.location.replace('api/user/login')
+      }
+  }
+}
+$('#add-post').on('click', postHandler);
+} catch (error) {
+  console.log(error)
+}
