@@ -13,6 +13,7 @@ User.init(
 
         id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             autoIncrement: true,
             primaryKey: true
         },
@@ -25,7 +26,7 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [8],
+                len: [6],
             }
         },
 

@@ -1,6 +1,6 @@
-const router = require("express").Router();
-const { User, Post, Comment} = require("../models");
 
+const { User, Post, Comment} = require("../models");
+const router = require("express").Router();
 
 // router.get("/login", async (req, res) => {
 //     console.log(req.session);

@@ -13,7 +13,10 @@ Comment.init (
         },
         comment: {
             type: DataTypes.TEXT,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: [1, 150],
+            },
         },
         // created: {
         //     type: DataTypes.DATEONLY,
