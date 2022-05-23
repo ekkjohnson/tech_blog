@@ -2,4 +2,10 @@
     "title": "first post",
     "contents": "my first post",
     "user_id": 1
-}]
+},
+{
+    "id": 2,
+    "title": "multi-state",
+    "contents": "dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia",
+    "user_id": 3
+  }]

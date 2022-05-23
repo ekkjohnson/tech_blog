@@ -24,7 +24,7 @@ try {
               alert('Post Added')
               document.location.replace(`/api/dashboard/${user_id}`);     
           } else {
-              alert('You Are Not Logged In!');
+              alert('You Are Not Logged In Currently!');
           }
       }
   }
